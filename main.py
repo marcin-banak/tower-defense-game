@@ -2,9 +2,12 @@ import time
 import os
 import random
 
+import pygame
 from pygame import *
 from CONST import *
 from Footman import *
+from Knight import *
+from Wolf import *
 from ArcherTower import *
 from Arrow import *
 from ArtilleryTower import *
@@ -89,16 +92,34 @@ class Main:
     def draw_game(self):
         self.draw_screen.blit(self.textures["map"], (0, 0))
         for enemy in self.enemies:
-            self.draw_screen.blit(self.textures["footman" + str(enemy.frame)], enemy.pos)
-            if enemy.HP != FOOTMAN_HP:
-                pygame.draw.line(self.draw_screen, pygame.Color(0, 0, 0),
-                                 pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 12),
-                                 pygame.Vector2(enemy.pos.x + 8, enemy.pos.y + 12), 1)
-                pygame.draw.line(self.draw_screen, pygame.Color(255, 0, 0),
-                                 pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 12),
-                                 pygame.Vector2(enemy.pos.x + 8 * enemy.HP // FOOTMAN_HP, enemy.pos.y + 12), 1)
+            if isinstance(enemy, Footman):
+                self.draw_screen.blit(self.textures["footman" + str(enemy.frame)], enemy.pos)
+                if enemy.HP != FOOTMAN_HP:
+                    pygame.draw.line(self.draw_screen, pygame.Color(0, 0, 0),
+                                     pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 12),
+                                     pygame.Vector2(enemy.pos.x + 8, enemy.pos.y + 12), 1)
+                    pygame.draw.line(self.draw_screen, pygame.Color(255, 0, 0),
+                                     pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 12),
+                                     pygame.Vector2(enemy.pos.x + 8 * enemy.HP // FOOTMAN_HP, enemy.pos.y + 12), 1)
+            elif isinstance(enemy, Knight):
+                self.draw_screen.blit(self.textures["knight" + str(enemy.frame)], enemy.pos)
+                if enemy.HP != KNIGHT_HP:
+                    pygame.draw.line(self.draw_screen, pygame.Color(0, 0, 0),
+                                     pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 17),
+                                     pygame.Vector2(enemy.pos.x + 8, enemy.pos.y + 17), 1)
+                    pygame.draw.line(self.draw_screen, pygame.Color(255, 0, 0),
+                                     pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 17),
+                                     pygame.Vector2(enemy.pos.x + 8 * enemy.HP // KNIGHT_HP, enemy.pos.y + 17), 1)
+            else:
+                self.draw_screen.blit(self.textures["wolf" + str(enemy.frame)], enemy.pos)
+                if enemy.HP != WOLF_HP:
+                    pygame.draw.line(self.draw_screen, pygame.Color(0, 0, 0),
+                                     pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 10),
+                                     pygame.Vector2(enemy.pos.x + 8, enemy.pos.y + 10), 1)
+                    pygame.draw.line(self.draw_screen, pygame.Color(255, 0, 0),
+                                     pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 10),
+                                     pygame.Vector2(enemy.pos.x + 8 * enemy.HP // KNIGHT_HP, enemy.pos.y + 10), 1)
         for tile in self.tiles:
-            tile.update(self.mouse)
             if tile.state == "touched":
                 self.draw_screen.blit(self.textures["tileLight"], tile.pos)
             if tile.clicked:
@@ -123,16 +144,22 @@ class Main:
 
     def init_enemies(self):
         enemies = []
+        enemies.append(Knight(self.path[0]))
         for i in range(5):
-            enemies.append(Footman(pygame.Vector2((self.path[0].x + i), self.path[0].y)))
+            enemies.append(Footman(pygame.Vector2((self.path[0].x + i + 1), self.path[0].y)))
+        enemies.append(Wolf(self.path[0]))
         return enemies
 
     def update_enemies(self):
         for enemy in self.enemies:
             enemy.update(self.dt, self.path)
-            if enemy.pos.distance_to((self.path[len(self.path) - 2]) * BLOCK_SIZE) < MOVE_PRECISION:
+            if enemy.pos.distance_to((self.path[len(self.path) - 2]) * BLOCK_SIZE) < BASE_PRECISION:
                 if isinstance(enemy, Footman):
                     self.base_HP -= FOOTMAN_BASE_DAMAGE
+                elif isinstance(enemy, Knight):
+                    self.base_HP -= KNIGHT_BASE_DAMAGE
+                else:
+                    self.base_HP -= WOLF_BASE_DAMAGE
                 self.enemies.remove(enemy)
             elif enemy.HP <= 0:
                 self.enemies.remove(enemy)
@@ -148,6 +175,7 @@ class Main:
 
     def update_tiles(self):
         for tile in self.tiles:
+            tile.update(self.mouse)
             if tile.make_buttons:
                 self.tile_buttons = self.init_tile_buttons(tile)
         for button in self.tile_buttons:
@@ -155,12 +183,12 @@ class Main:
             if button.clicked:
                 self.textures["map"].blit(self.make_cover(), button.tile.pos)
                 if button.type == "archer":
-                    self.towers.append(ArcherTower(pygame.Vector2(button.tile.pos.x, button.tile.pos.y - 10)))
+                    self.towers.append(ArcherTower(pygame.Vector2(button.tile.pos.x, button.tile.pos.y - 20)))
                     self.tiles.remove(button.tile)
                 elif button.type == "mage":
                     pass
                 else:
-                    self.towers.append(ArtilleryTower(pygame.Vector2(button.tile.pos.x, button.tile.pos.y - 10)))
+                    self.towers.append(ArtilleryTower(pygame.Vector2(button.tile.pos.x, button.tile.pos.y - 20)))
                     self.tiles.remove(button.tile)
                 self.tile_buttons = []
 
@@ -227,12 +255,8 @@ class Main:
             for x, tile in enumerate(line):
                 if tile == '/':
                     texture = self.textures["grass" + str(random.randint(1, 9))]
-                elif tile == '#':
+                elif tile in ['#', '[', ']']:
                     texture = self.textures["path"]
-                elif tile == '[':
-                    texture = self.textures["base"]
-                elif tile == ']':
-                    texture = self.textures["entrance"]
                 map_surface.blit(texture, pygame.Vector2(x, y) * BLOCK_SIZE)
         for y, line in enumerate(self.map):
             for x, tile in enumerate(line):

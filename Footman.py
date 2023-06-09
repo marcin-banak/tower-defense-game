@@ -19,7 +19,7 @@ class Footman(Enemy):
         if self.pos.distance_to(dest) < MOVE_PRECISION:
             self.actual_tile += 1
             self.actual_tile = min(self.actual_tile, len(path) - 2)
-        if (pygame.time.get_ticks() - self.frame_change) / 1000 > ANIMATION_TIME:
+        if (pygame.time.get_ticks() - self.frame_change) / 1000 > FOOTMAN_ANIMATION_TIME:
             self.frame_change = pygame.time.get_ticks()
             self.frame += 1
             self.frame %= 3
