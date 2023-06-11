@@ -3,11 +3,10 @@ from CONST import *
 
 
 class Button:
-    def __init__(self, pos, size, type):
+    def __init__(self, pos, size):
         self.pos = pos
         self.rect = pygame.Rect(0, 0, size.x, size.y)
         self.rect.center = pygame.Vector2(pos.x + size.x // 2, pos.y + size.y // 2)
-        self.type = type
         self.state = "normal"
         self.clicked = False
         self.sound_to_play = None

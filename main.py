@@ -28,22 +28,25 @@ class Main:
         display.set_caption("Tower defense")
 
         self.map = []
-        self.path = []
-        self.enemies = []
-        self.tiles = []
-        self.tile_buttons = []
-        self.towers = []
-        self.projectiles = []
-        self.base_HP = None
-        self.init_game()
-
-        self.scene = self.game
+        self.map = self.load_map()
         self.textures = {}
         self.load_textures()
         self.mouse = Mouse()
         self.is_running = True
         self.clock = time.Clock()
         self.dt = 1
+
+        self.path = []
+        self.enemies = []
+        self.tiles = []
+        self.tile_buttons = []
+        self.towers = []
+        self.projectiles = []
+        self.enemies_power = None
+        self.base_HP = None
+
+        self.buttons = []
+        self.init_menu()
 
         while self.is_running:
             self.check_events()
@@ -63,20 +66,35 @@ class Main:
         display.update()
 
     def init_menu(self):
-        print("in menu")
+        self.buttons = self.init_buttons()
+        self.scene = self.menu
 
     def menu(self):
+        self.update_buttons()
         self.draw_menu()
 
     def draw_menu(self):
-        self.draw_screen.fill((255, 122, 122))
+        self.draw_screen.fill((0, 0, 0))
+        for button in self.buttons:
+            self.draw_screen.blit(self.textures["startButton"], button.pos)
+
+    def init_buttons(self):
+        buttons = []
+        buttons.append(Button(pygame.Vector2(115, 75), pygame.Vector2(90, 30)))
+        return buttons
+
+    def update_buttons(self):
+        for button in self.buttons:
+            button.update(self.mouse)
+            if button.clicked:
+                self.init_game()
 
     def init_game(self):
-        self.map = self.load_map()
         self.path = self.get_path()
         self.enemies = self.init_enemies()
         self.tiles = self.init_tiles()
         self.base_HP = 20
+        self.scene = self.game
 
     def game(self):
         self.update_enemies()
@@ -118,7 +136,7 @@ class Main:
                                      pygame.Vector2(enemy.pos.x + 8, enemy.pos.y + 10), 1)
                     pygame.draw.line(self.draw_screen, pygame.Color(255, 0, 0),
                                      pygame.Vector2(enemy.pos.x + 2, enemy.pos.y + 10),
-                                     pygame.Vector2(enemy.pos.x + 8 * enemy.HP // KNIGHT_HP, enemy.pos.y + 10), 1)
+                                     pygame.Vector2(enemy.pos.x + 8 * enemy.HP // WOLF_HP, enemy.pos.y + 10), 1)
         for tile in self.tiles:
             if tile.state == "touched":
                 self.draw_screen.blit(self.textures["tileLight"], tile.pos)
@@ -148,7 +166,26 @@ class Main:
         for i in range(5):
             enemies.append(Footman(pygame.Vector2((self.path[0].x + i + 1), self.path[0].y)))
         enemies.append(Wolf(self.path[0]))
+        self.enemies_power = WOLF_POWER + 5 * FOOTMAN_POWER + KNIGHT_POWER
         return enemies
+
+    def add_enemies(self):
+        power = ENEMIES_MAX_POWER - random.randint(0, ENEMIES_POWER_INTERVAL)
+        enemies = ["wolf", 'footman', 'knight']
+        weights = [ENEMIES_SUM_POWER / WOLF_POWER, ENEMIES_SUM_POWER / FOOTMAN_POWER, ENEMIES_SUM_POWER / KNIGHT_POWER]
+        i = 0
+        while self.enemies_power < power:
+            choice = random.choices(enemies, weights)
+            if choice[0] == "wolf":
+                self.enemies_power += WOLF_POWER
+                self.enemies.append(Wolf(pygame.Vector2((self.path[0].x + i), self.path[0].y)))
+            elif choice[0] == "footman":
+                self.enemies_power += FOOTMAN_POWER
+                self.enemies.append(Footman(pygame.Vector2((self.path[0].x + i), self.path[0].y)))
+            else:
+                self.enemies_power += KNIGHT_POWER
+                self.enemies.append(Knight(pygame.Vector2((self.path[0].x + i), self.path[0].y)))
+            i += 1
 
     def update_enemies(self):
         for enemy in self.enemies:
@@ -156,13 +193,24 @@ class Main:
             if enemy.pos.distance_to((self.path[len(self.path) - 2]) * BLOCK_SIZE) < BASE_PRECISION:
                 if isinstance(enemy, Footman):
                     self.base_HP -= FOOTMAN_BASE_DAMAGE
+                    self.enemies_power -= FOOTMAN_POWER
                 elif isinstance(enemy, Knight):
                     self.base_HP -= KNIGHT_BASE_DAMAGE
+                    self.enemies_power -= KNIGHT_POWER
                 else:
                     self.base_HP -= WOLF_BASE_DAMAGE
+                    self.enemies_power -= WOLF_POWER
                 self.enemies.remove(enemy)
             elif enemy.HP <= 0:
+                if isinstance(enemy, Footman):
+                    self.enemies_power -= FOOTMAN_POWER
+                elif isinstance(enemy, Knight):
+                    self.enemies_power -= KNIGHT_POWER
+                else:
+                    self.enemies_power -= WOLF_POWER
                 self.enemies.remove(enemy)
+        if self.enemies_power <= ENEMIES_MIN_POWER:
+            self.add_enemies()
         sorted(self.enemies, key = lambda enemy: (enemy.actual_tile))
 
     def init_tiles(self):
