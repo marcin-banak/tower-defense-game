@@ -1,11 +1,10 @@
 import time
 import os
-import random
 
-import pygame
 from pygame import *
-from CONST import *
+
 from Footman import *
+from CONST import *
 from Knight import *
 from Wolf import *
 from ArcherTower import *
@@ -19,33 +18,61 @@ from Button import *
 
 
 class Main:
+    '''
+    Klasa Main jest klasą główną, która w pętli gry obsługuje całą logikę gry oraz menu.
+    Klasa posiada:
+    * pola ogólne:
+        - screen: pygame.Surface
+        - draw_screen: pygame.Surface
+        - font: pygame.font
+        - map: list
+        - textures: dict
+        - mouse: mouse.Mouse
+        - is_running: bool
+        - clock: pygame.Clock
+        - dt: float
+    * pola gry:
+        - path: list
+        - enemies: list
+        - tiles: list
+        - tile_buttons: list
+        - towers: list
+        - projectiles: list
+        - enemies_power: int
+        - base_HP: int
+    * pola menu:
+        - buttons: list
+    Metody:
+        - __init__: void
+        - update: void
+    '''
     def __init__(self):
         # inicjalizacja zasobów modułu pygame.
         init()
-        self.screen = display.set_mode(SCREEN_SIZE)
-        self.draw_screen = pygame.Surface(DRAW_SCREEN_SIZE)
-        self.font = pygame.font.Font("font.ttf", 14)
+        self.screen: pygame.Surface = display.set_mode(SCREEN_SIZE)
+        self.draw_screen: pygame.Surface = pygame.Surface(DRAW_SCREEN_SIZE)
+        self.font: pygame.font = pygame.font.Font("font.ttf", 14)
         display.set_caption("Tower defense")
 
-        self.map = []
+        self.map: list = []
         self.map = self.load_map()
-        self.textures = {}
+        self.textures: dict = {}
         self.load_textures()
-        self.mouse = Mouse()
-        self.is_running = True
-        self.clock = time.Clock()
-        self.dt = 1
+        self.mouse: mouse.Mouse = Mouse()
+        self.is_running: bool = True
+        self.clock: pygame.Clock = time.Clock()
+        self.dt: float = 1
 
-        self.path = []
-        self.enemies = []
-        self.tiles = []
-        self.tile_buttons = []
-        self.towers = []
-        self.projectiles = []
-        self.enemies_power = None
-        self.base_HP = None
+        self.path: list = []
+        self.enemies: list = []
+        self.tiles: list = []
+        self.tile_buttons: list = []
+        self.towers: list = []
+        self.projectiles: list = []
+        self.enemies_power: int = None
+        self.base_HP: int = None
 
-        self.buttons = []
+        self.buttons: list = []
         self.init_menu()
 
         while self.is_running:
