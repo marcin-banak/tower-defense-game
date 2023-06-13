@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pl" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONST module &mdash; Tower defense game 1.0 - dokumentacja</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" />
+    <link rel="next" title="CannonTower module" href="CannonTower.html" />
+    <link rel="prev" title="Button module" href="Button.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Tower defense game
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Szukaj" aria-label="Szukaj" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">tower-defense-game</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ArcherTower.html">ArcherTower module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arrow.html">Arrow module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArtilleryTower.html">ArtilleryTower module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Beam.html">Beam module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Bomb.html">Bomb module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CONST module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ARCHER_TOWER_RANGE"><code class="docutils literal notranslate"><span class="pre">ARCHER_TOWER_RANGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ARCHER_TOWER_SPEED"><code class="docutils literal notranslate"><span class="pre">ARCHER_TOWER_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ARROW_DAMAGE"><code class="docutils literal notranslate"><span class="pre">ARROW_DAMAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ARROW_SPEED"><code class="docutils literal notranslate"><span class="pre">ARROW_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ARTILLERY_TOWER_RANGE"><code class="docutils literal notranslate"><span class="pre">ARTILLERY_TOWER_RANGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ARTILLERY_TOWER_SPEED"><code class="docutils literal notranslate"><span class="pre">ARTILLERY_TOWER_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BASE_PRECISION"><code class="docutils literal notranslate"><span class="pre">BASE_PRECISION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BEAM_DAMAGE"><code class="docutils literal notranslate"><span class="pre">BEAM_DAMAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BEAM_SPEED"><code class="docutils literal notranslate"><span class="pre">BEAM_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BLOCK_SIZE"><code class="docutils literal notranslate"><span class="pre">BLOCK_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BOMB_DAMAGE"><code class="docutils literal notranslate"><span class="pre">BOMB_DAMAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BOMB_SPEED"><code class="docutils literal notranslate"><span class="pre">BOMB_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.BOMB_SPLASH_AREA"><code class="docutils literal notranslate"><span class="pre">BOMB_SPLASH_AREA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.DRAW_SCREEN_SIZE"><code class="docutils literal notranslate"><span class="pre">DRAW_SCREEN_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ENEMIES_MAX_POWER"><code class="docutils literal notranslate"><span class="pre">ENEMIES_MAX_POWER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ENEMIES_MIN_POWER"><code class="docutils literal notranslate"><span class="pre">ENEMIES_MIN_POWER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ENEMIES_POWER_INTERVAL"><code class="docutils literal notranslate"><span class="pre">ENEMIES_POWER_INTERVAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.ENEMIES_SUM_POWER"><code class="docutils literal notranslate"><span class="pre">ENEMIES_SUM_POWER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.FOOTMAN_ANIMATION_TIME"><code class="docutils literal notranslate"><span class="pre">FOOTMAN_ANIMATION_TIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.FOOTMAN_BASE_DAMAGE"><code class="docutils literal notranslate"><span class="pre">FOOTMAN_BASE_DAMAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.FOOTMAN_HP"><code class="docutils literal notranslate"><span class="pre">FOOTMAN_HP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.FOOTMAN_POWER"><code class="docutils literal notranslate"><span class="pre">FOOTMAN_POWER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.FOOTMAN_SPEED"><code class="docutils literal notranslate"><span class="pre">FOOTMAN_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.FPS"><code class="docutils literal notranslate"><span class="pre">FPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.HEIGHT"><code class="docutils literal notranslate"><span class="pre">HEIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.KNIGHT_ANIMATION_TIME"><code class="docutils literal notranslate"><span class="pre">KNIGHT_ANIMATION_TIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.KNIGHT_BASE_DAMAGE"><code class="docutils literal notranslate"><span class="pre">KNIGHT_BASE_DAMAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.KNIGHT_HP"><code class="docutils literal notranslate"><span class="pre">KNIGHT_HP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.KNIGHT_POWER"><code class="docutils literal notranslate"><span class="pre">KNIGHT_POWER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.KNIGHT_SPEED"><code class="docutils literal notranslate"><span class="pre">KNIGHT_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.MAGE_TOWER_RANGE"><code class="docutils literal notranslate"><span class="pre">MAGE_TOWER_RANGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.MAGE_TOWER_SPEED"><code class="docutils literal notranslate"><span class="pre">MAGE_TOWER_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.MOVE_PRECISION"><code class="docutils literal notranslate"><span class="pre">MOVE_PRECISION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.SCREEN_SIZE"><code class="docutils literal notranslate"><span class="pre">SCREEN_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.TILE_SIZE"><code class="docutils literal notranslate"><span class="pre">TILE_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.TOWER_SIZE"><code class="docutils literal notranslate"><span class="pre">TOWER_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.WIDTH"><code class="docutils literal notranslate"><span class="pre">WIDTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.WOLF_ANIMATION_TIME"><code class="docutils literal notranslate"><span class="pre">WOLF_ANIMATION_TIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.WOLF_BASE_DAMAGE"><code class="docutils literal notranslate"><span class="pre">WOLF_BASE_DAMAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.WOLF_HP"><code class="docutils literal notranslate"><span class="pre">WOLF_HP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.WOLF_POWER"><code class="docutils literal notranslate"><span class="pre">WOLF_POWER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#CONST.WOLF_SPEED"><code class="docutils literal notranslate"><span class="pre">WOLF_SPEED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Knight.html">Knight module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MageTower.html">MageTower module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tile.html">Tile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TileButton.html">TileButton module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Wolf.html">Wolf module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mouse.html">mouse module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tower defense game</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tower-defense-game</a></li>
+      <li class="breadcrumb-item active">CONST module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/CONST.rst.txt" rel="nofollow"> Zobacz źródło strony</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-CONST">
+<span id="const-module"></span><h1>CONST module<a class="headerlink" href="#module-CONST" title="Permalink to this heading"></a></h1>
+<p>Moduł zawiera stałe wykorzystywane przez program.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ARCHER_TOWER_RANGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ARCHER_TOWER_RANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">70</span></em><a class="headerlink" href="#CONST.ARCHER_TOWER_RANGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zasięg obiektu klasy ArcherTower służący do określenia czy przeciwnik znajduje się w jej zasięgu.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ARCHER_TOWER_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ARCHER_TOWER_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#CONST.ARCHER_TOWER_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość z jaką obiket klasy ArcherTower może wystrzelić pocisk.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ARROW_DAMAGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ARROW_DAMAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#CONST.ARROW_DAMAGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Obrażenia zadawane przez pocisk typu Arrow.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ARROW_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ARROW_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#CONST.ARROW_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość przemieszczania się pocisku typu .</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ARTILLERY_TOWER_RANGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ARTILLERY_TOWER_RANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#CONST.ARTILLERY_TOWER_RANGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zasięg obiektu klasy ArtilleryTower służący do określenia czy przeciwnik znajduje się w jej zasięgu.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ARTILLERY_TOWER_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ARTILLERY_TOWER_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.4</span></em><a class="headerlink" href="#CONST.ARTILLERY_TOWER_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość z jaką obiket klasy ArtilleryTower może wystrzelić pocisk.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BASE_PRECISION">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BASE_PRECISION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#CONST.BASE_PRECISION" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Precyzja z jaką wykrywana jest kolizja przeciwnika z bazą.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BEAM_DAMAGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BEAM_DAMAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">38</span></em><a class="headerlink" href="#CONST.BEAM_DAMAGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Obrażenia zadawane przez pocisk typu Beam.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BEAM_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BEAM_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.4</span></em><a class="headerlink" href="#CONST.BEAM_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość przemieszczania się pocisku typu Beam.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BLOCK_SIZE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BLOCK_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#CONST.BLOCK_SIZE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wielkość bloków mapy.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BOMB_DAMAGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BOMB_DAMAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">37</span></em><a class="headerlink" href="#CONST.BOMB_DAMAGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Obrażenia zadawane przez pocisk typu Bomb.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BOMB_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BOMB_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.9</span></em><a class="headerlink" href="#CONST.BOMB_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość przemieszczania się pocisku typu Bomb.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.BOMB_SPLASH_AREA">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">BOMB_SPLASH_AREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#CONST.BOMB_SPLASH_AREA" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Obszar, w którym pocisk typu Bomb zadaje obrażenia.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.DRAW_SCREEN_SIZE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">DRAW_SCREEN_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Vector2(320,</span> <span class="pre">180)&gt;</span></em><a class="headerlink" href="#CONST.DRAW_SCREEN_SIZE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wektor przechowujący rozdzielczość płaszczyzny, na której rysuje program.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ENEMIES_MAX_POWER">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ENEMIES_MAX_POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">90</span></em><a class="headerlink" href="#CONST.ENEMIES_MAX_POWER" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Maksymalna siła przciwników na podstawie której generowani są przeciwnicy.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ENEMIES_MIN_POWER">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ENEMIES_MIN_POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#CONST.ENEMIES_MIN_POWER" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Minimalna siła przciwników na podstawie której wybierany jest moment generowania fali.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ENEMIES_POWER_INTERVAL">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ENEMIES_POWER_INTERVAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#CONST.ENEMIES_POWER_INTERVAL" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Stała na podstawie której losowana jest maksymalna siła przeciwników w danej fali.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.ENEMIES_SUM_POWER">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">ENEMIES_SUM_POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#CONST.ENEMIES_SUM_POWER" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Suma siły wszytkich przeciwników służąca do obliczenia prawdopodobieństwa wystąpienia przeciwnika w danej fali.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.FOOTMAN_ANIMATION_TIME">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">FOOTMAN_ANIMATION_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.3</span></em><a class="headerlink" href="#CONST.FOOTMAN_ANIMATION_TIME" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość z jaką zmieniają się klatki animacji obiektu klasy Footman.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.FOOTMAN_BASE_DAMAGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">FOOTMAN_BASE_DAMAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#CONST.FOOTMAN_BASE_DAMAGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość obrażeń zadawanych przez obiekt klasy Footman, jeśli dotrze on do pola bazy.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.FOOTMAN_HP">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">FOOTMAN_HP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">120</span></em><a class="headerlink" href="#CONST.FOOTMAN_HP" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Początkowy stan punktów życia obiektu klasy Footman.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.FOOTMAN_POWER">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">FOOTMAN_POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#CONST.FOOTMAN_POWER" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Siła przeciwnika klasy Footman wykorzystwana do obliczenia momentu wygenerowania nowej fali przeciwników.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.FOOTMAN_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">FOOTMAN_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.2</span></em><a class="headerlink" href="#CONST.FOOTMAN_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość przemieszczania się obiektu klasy Footman.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.FPS">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">FPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">60</span></em><a class="headerlink" href="#CONST.FPS" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Ilość klatek na sekundę.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.HEIGHT">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">HEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">576</span></em><a class="headerlink" href="#CONST.HEIGHT" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wysokość ekranu.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.KNIGHT_ANIMATION_TIME">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">KNIGHT_ANIMATION_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.2</span></em><a class="headerlink" href="#CONST.KNIGHT_ANIMATION_TIME" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość z jaką zmieniają się klatki animacji obiektu klasy Knight.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.KNIGHT_BASE_DAMAGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">KNIGHT_BASE_DAMAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#CONST.KNIGHT_BASE_DAMAGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość obrażeń zadawanych przez obiekt klasy Knight, jeśli dotrze on do pola bazy.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.KNIGHT_HP">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">KNIGHT_HP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">300</span></em><a class="headerlink" href="#CONST.KNIGHT_HP" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Początkowy stan punktów życia obiektu klasy Knight.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.KNIGHT_POWER">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">KNIGHT_POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#CONST.KNIGHT_POWER" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Siła przeciwnika klasy Knight wykorzystwana do obliczenia momentu wygenerowania nowej fali przeciwników.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.KNIGHT_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">KNIGHT_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.07</span></em><a class="headerlink" href="#CONST.KNIGHT_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość przemieszczania się obiektu klasy Knight.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.MAGE_TOWER_RANGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">MAGE_TOWER_RANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65</span></em><a class="headerlink" href="#CONST.MAGE_TOWER_RANGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zasięg obiektu klasy MageTower służący do określenia czy przeciwnik znajduje się w jej zasięgu.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.MAGE_TOWER_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">MAGE_TOWER_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.9</span></em><a class="headerlink" href="#CONST.MAGE_TOWER_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość z jaką obiket klasy MageTower może wystrzelić pocisk.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.MOVE_PRECISION">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">MOVE_PRECISION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#CONST.MOVE_PRECISION" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prezycja z jaką wykrywane są kolizje.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.SCREEN_SIZE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">SCREEN_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Vector2(1024,</span> <span class="pre">576)&gt;</span></em><a class="headerlink" href="#CONST.SCREEN_SIZE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wektor przechowujący rozdzielczość wyświetlacza.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.TILE_SIZE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">TILE_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Vector2(20,</span> <span class="pre">20)&gt;</span></em><a class="headerlink" href="#CONST.TILE_SIZE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wektor przechowujący wymiary pola wieży.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.TOWER_SIZE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">TOWER_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Vector2(20,</span> <span class="pre">40)&gt;</span></em><a class="headerlink" href="#CONST.TOWER_SIZE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wektor przechowujący wymiary wieży.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.WIDTH">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">WIDTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#CONST.WIDTH" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Szerokość ekranu.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.WOLF_ANIMATION_TIME">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">WOLF_ANIMATION_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.2</span></em><a class="headerlink" href="#CONST.WOLF_ANIMATION_TIME" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość z jaką zmieniają się klatki animacji obiektu klasy Wolf.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.WOLF_BASE_DAMAGE">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">WOLF_BASE_DAMAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#CONST.WOLF_BASE_DAMAGE" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość obrażeń zadawanych przez obiekt klasy Wolf, jeśli dotrze on do pola bazy.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.WOLF_HP">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">WOLF_HP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">80</span></em><a class="headerlink" href="#CONST.WOLF_HP" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Początkowy stan punktów życia obiektu klasy Wolf.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.WOLF_POWER">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">WOLF_POWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#CONST.WOLF_POWER" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Siła przeciwnika klasy Wolf wykorzystwana do obliczenia momentu wygenerowania nowej fali przeciwników.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="CONST.WOLF_SPEED">
+<span class="sig-prename descclassname"><span class="pre">CONST.</span></span><span class="sig-name descname"><span class="pre">WOLF_SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.3</span></em><a class="headerlink" href="#CONST.WOLF_SPEED" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prędkość przemieszczania się obiektu klasy Wolf.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Button.html" class="btn btn-neutral float-left" title="Button module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Poprzedni</a>
+        <a href="CannonTower.html" class="btn btn-neutral float-right" title="CannonTower module" accesskey="n" rel="next">Następny <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Marcin Banak.</p>
+  </div>
+
+  Zbudowano w <a href="https://www.sphinx-doc.org/">Sphinx</a> używając
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    dostarczone przez <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
