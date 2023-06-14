@@ -54,11 +54,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Knight module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Knight.Knight"><code class="docutils literal notranslate"><span class="pre">Knight</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Knight.Knight.pos"><code class="docutils literal notranslate"><span class="pre">Knight.pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Knight.Knight.actual_tile"><code class="docutils literal notranslate"><span class="pre">Knight.actual_tile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Knight.Knight.HP"><code class="docutils literal notranslate"><span class="pre">Knight.HP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Knight.Knight.frame"><code class="docutils literal notranslate"><span class="pre">Knight.frame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Knight.Knight.frame_change"><code class="docutils literal notranslate"><span class="pre">Knight.frame_change</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Knight.Knight.update"><code class="docutils literal notranslate"><span class="pre">Knight.update()</span></code></a></li>
 </ul>
 </li>
@@ -103,33 +107,79 @@
 <span id="knight-module"></span><h1>Knight module<a class="headerlink" href="#module-Knight" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="Knight.Knight">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Knight.</span></span><span class="sig-name descname"><span class="pre">Knight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Knight.Knight" title="Stały odnośnik do tej definicji"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Knight.</span></span><span class="sig-name descname"><span class="pre">Knight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Knight.Knight" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Klasy bazowe: <a class="reference internal" href="Enemy.html#Enemy.Enemy" title="Enemy.Enemy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enemy</span></code></a></p>
-<p>Klasa Knight reprezentuje jednostkę przeciwnika, która ma dużo życia, ale wolno się porusza.
-Klasa posiada pola:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>pos: pygame.Vector2</p></li>
-<li><p>actual_tile: int</p></li>
-<li><p>HP: float</p></li>
-<li><p>frame: int</p></li>
-<li><p>frame_change: float</p></li>
-</ul>
-</div></blockquote>
-<dl class="simple">
-<dt>Metody:</dt><dd><ul class="simple">
-<li><p>__init__: void</p></li>
-<li><p>update: void</p></li>
-</ul>
+<p>Klasa, dziedzicząca po abstrakcyjnej klasie Enemy, reprezentuje rycerza,     który jest przeciwnikiem i której instancje są tworzone podczas trwania gry.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Knight.Knight.pos">
+<span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#Knight.Knight.pos" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Para koordynatów reprezentująca pozycję przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Vector2</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Knight.Knight.actual_tile">
+<span class="sig-name descname"><span class="pre">actual_tile</span></span><a class="headerlink" href="#Knight.Knight.actual_tile" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>indeks listy reprezentującej ścieżkę,         który opisuje obecną pozycję przeciwnika na ścieżce.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Knight.Knight.HP">
+<span class="sig-name descname"><span class="pre">HP</span></span><a class="headerlink" href="#Knight.Knight.HP" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Ilość punktów życia przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Knight.Knight.frame">
+<span class="sig-name descname"><span class="pre">frame</span></span><a class="headerlink" href="#Knight.Knight.frame" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Numer klatki animacji, która powinna zostać narysowana.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Knight.Knight.frame_change">
+<span class="sig-name descname"><span class="pre">frame_change</span></span><a class="headerlink" href="#Knight.Knight.frame_change" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Czas jaki minął od zmiany klatki animacji.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="Knight.Knight.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Knight.Knight.update" title="Stały odnośnik do tej definicji"></a></dt>
-<dd><p>Metoda akutalizująca pozycję i klatkę animacji obiektu klasy Knight.
-:param dt: float
-:param path: list
-:return: void</p>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Knight.Knight.update" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zaktualizowanie obiektu przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dt</strong> (<em>float</em>) – Skalar, przez który przemnażane są zmienne,             aby zadbać o jednolite działanie programu,             niezależnie od prędkości jego działania.</p></li>
+<li><p><strong>path</strong> (<em>list</em>) – Lista par koordynatów reprezentująca ścieżkę,             po której porusza się przeciwnik.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

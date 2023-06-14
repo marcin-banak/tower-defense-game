@@ -53,7 +53,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Knight.html">Knight module</a></li>
@@ -64,6 +63,9 @@
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">mouse module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mouse.Mouse"><code class="docutils literal notranslate"><span class="pre">Mouse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mouse.Mouse.rect"><code class="docutils literal notranslate"><span class="pre">Mouse.rect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mouse.Mouse.click"><code class="docutils literal notranslate"><span class="pre">Mouse.click</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mouse.Mouse.click_switch"><code class="docutils literal notranslate"><span class="pre">Mouse.click_switch</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mouse.Mouse.update"><code class="docutils literal notranslate"><span class="pre">Mouse.update()</span></code></a></li>
 </ul>
 </li>
@@ -104,10 +106,53 @@
 <dt class="sig sig-object py" id="mouse.Mouse">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mouse.</span></span><span class="sig-name descname"><span class="pre">Mouse</span></span><a class="headerlink" href="#mouse.Mouse" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa myszki, dzięki której program może obsługiwać związane z nią zdarzenia.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mouse.Mouse.rect">
+<span class="sig-name descname"><span class="pre">rect</span></span><a class="headerlink" href="#mouse.Mouse.rect" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Prostokąt służący do wykrywania         kolizji myszki z innymi obiektami.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Rect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mouse.Mouse.click">
+<span class="sig-name descname"><span class="pre">click</span></span><a class="headerlink" href="#mouse.Mouse.click" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość logiczna mówiąca, czy myszka jest kliknięta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mouse.Mouse.click_switch">
+<span class="sig-name descname"><span class="pre">click_switch</span></span><a class="headerlink" href="#mouse.Mouse.click_switch" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość logiczna dbająca o to by wartość zmiennej click         została ustawiona na False przy puszczeniu przycisku myszy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="mouse.Mouse.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mouse.Mouse.update" title="Stały odnośnik do tej definicji"></a></dt>
-<dd></dd></dl>
+<dd><p>Zaktualizowanie obiektu myszy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>screen_size</strong> (<em>pygame.Vector2</em>) – Para liczb określająca rozdzielczość ekranu,             używana do przeskalowania pozycji myszki do wymiarów płaszczyzny,             na której rysowany jest program.</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

@@ -52,6 +52,9 @@
 <li class="toctree-l2"><a class="reference internal" href="Beam.html">Beam module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bomb module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Bomb.Bomb"><code class="docutils literal notranslate"><span class="pre">Bomb</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Bomb.Bomb.pos"><code class="docutils literal notranslate"><span class="pre">Bomb.pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Bomb.Bomb.target"><code class="docutils literal notranslate"><span class="pre">Bomb.target</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Bomb.Bomb.hit"><code class="docutils literal notranslate"><span class="pre">Bomb.hit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Bomb.Bomb.update"><code class="docutils literal notranslate"><span class="pre">Bomb.update()</span></code></a></li>
 </ul>
 </li>
@@ -60,7 +63,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Knight.html">Knight module</a></li>
@@ -104,11 +106,54 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="Bomb.Bomb">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Bomb.</span></span><span class="sig-name descname"><span class="pre">Bomb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Bomb.Bomb" title="Stały odnośnik do tej definicji"></a></dt>
-<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Klasy bazowe: <a class="reference internal" href="Projectile.html#Projectile.Projectile" title="Projectile.Projectile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Projectile</span></code></a></p>
+<p>Klasa, dziedzicząca po abstrakcyjnej klasie Projectile,     reprezentuje pocisk bomby, której instancje są tworzone podczas trwania gry.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Bomb.Bomb.pos">
+<span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#Bomb.Bomb.pos" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Para koordynatów reprezentująca pozycję pocisku.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Vector2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Bomb.Bomb.target">
+<span class="sig-name descname"><span class="pre">target</span></span><a class="headerlink" href="#Bomb.Bomb.target" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Obiekt przeciwnika, który jest celem pocisku.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="Enemy.html#Enemy.Enemy" title="Enemy.Enemy">Enemy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Bomb.Bomb.hit">
+<span class="sig-name descname"><span class="pre">hit</span></span><a class="headerlink" href="#Bomb.Bomb.hit" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zmienna mówiąca czy pocisk trafił swój cel.         W momencie trafienia, pocisk zostaje zwolniony z pamięci.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="Bomb.Bomb.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enemies</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Bomb.Bomb.update" title="Stały odnośnik do tej definicji"></a></dt>
-<dd></dd></dl>
+<dd><p>Zaktualizowanie obiektu pocisku.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dt</strong> (<em>float</em>) – Skalar, przez który przemnażane są zmienne,             aby zadbać o jednolite działanie programu,             niezależnie od prędkości jego działania.</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

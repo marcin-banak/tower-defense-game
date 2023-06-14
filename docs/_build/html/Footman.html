@@ -54,10 +54,14 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Footman module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Footman.Footman"><code class="docutils literal notranslate"><span class="pre">Footman</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Footman.Footman.pos"><code class="docutils literal notranslate"><span class="pre">Footman.pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Footman.Footman.actual_tile"><code class="docutils literal notranslate"><span class="pre">Footman.actual_tile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Footman.Footman.HP"><code class="docutils literal notranslate"><span class="pre">Footman.HP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Footman.Footman.frame"><code class="docutils literal notranslate"><span class="pre">Footman.frame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Footman.Footman.frame_change"><code class="docutils literal notranslate"><span class="pre">Footman.frame_change</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Footman.Footman.update"><code class="docutils literal notranslate"><span class="pre">Footman.update()</span></code></a></li>
 </ul>
 </li>
@@ -105,10 +109,78 @@
 <dt class="sig sig-object py" id="Footman.Footman">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Footman.</span></span><span class="sig-name descname"><span class="pre">Footman</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Footman.Footman" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Klasy bazowe: <a class="reference internal" href="Enemy.html#Enemy.Enemy" title="Enemy.Enemy"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enemy</span></code></a></p>
+<p>Klasa, dziedzicząca po abstrakcyjnej klasie Enemy, reprezentuje żołnierza,     który jest przeciwnikiem i której instancje są tworzone podczas trwania gry.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Footman.Footman.pos">
+<span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#Footman.Footman.pos" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Para koordynatów reprezentująca pozycję przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Vector2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Footman.Footman.actual_tile">
+<span class="sig-name descname"><span class="pre">actual_tile</span></span><a class="headerlink" href="#Footman.Footman.actual_tile" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>indeks listy reprezentującej ścieżkę,         który opisuje obecną pozycję przeciwnika na ścieżce.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Footman.Footman.HP">
+<span class="sig-name descname"><span class="pre">HP</span></span><a class="headerlink" href="#Footman.Footman.HP" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Ilość punktów życia przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Footman.Footman.frame">
+<span class="sig-name descname"><span class="pre">frame</span></span><a class="headerlink" href="#Footman.Footman.frame" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Numer klatki animacji, która powinna zostać narysowana.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Footman.Footman.frame_change">
+<span class="sig-name descname"><span class="pre">frame_change</span></span><a class="headerlink" href="#Footman.Footman.frame_change" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Czas jaki minął od zmiany klatki animacji.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="Footman.Footman.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Footman.Footman.update" title="Stały odnośnik do tej definicji"></a></dt>
-<dd></dd></dl>
+<dd><p>Zaktualizowanie obiektu przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dt</strong> (<em>float</em>) – Skalar, przez który przemnażane są zmienne,             aby zadbać o jednolite działanie programu,             niezależnie od prędkości jego działania.</p></li>
+<li><p><strong>path</strong> (<em>list</em>) – Lista par koordynatów reprezentująca ścieżkę,             po której porusza się przeciwnik.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

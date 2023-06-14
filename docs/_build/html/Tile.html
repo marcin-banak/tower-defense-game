@@ -54,13 +54,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Knight.html">Knight module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MageTower.html">MageTower module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Tile module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Tile.Tile"><code class="docutils literal notranslate"><span class="pre">Tile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Tile.Tile.pos"><code class="docutils literal notranslate"><span class="pre">Tile.pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Tile.Tile.rect"><code class="docutils literal notranslate"><span class="pre">Tile.rect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Tile.Tile.state"><code class="docutils literal notranslate"><span class="pre">Tile.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Tile.Tile.clicked"><code class="docutils literal notranslate"><span class="pre">Tile.clicked</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Tile.Tile.update"><code class="docutils literal notranslate"><span class="pre">Tile.update()</span></code></a></li>
 </ul>
 </li>
@@ -105,10 +108,64 @@
 <dt class="sig sig-object py" id="Tile.Tile">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Tile.</span></span><span class="sig-name descname"><span class="pre">Tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tile.Tile" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa reprezentująca pole wieży.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Tile.Tile.pos">
+<span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#Tile.Tile.pos" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Para koordynatów opisująca położenie pola wieży.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Vector2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Tile.Tile.rect">
+<span class="sig-name descname"><span class="pre">rect</span></span><a class="headerlink" href="#Tile.Tile.rect" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Obiekt prostokątu         służący do wykrywania kolizji myszki z polem wieży.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Rect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Tile.Tile.state">
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#Tile.Tile.state" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zmienna opisująca stan pola wieży.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Tile.Tile.clicked">
+<span class="sig-name descname"><span class="pre">clicked</span></span><a class="headerlink" href="#Tile.Tile.clicked" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość logiczna opisująca, czy pole wieży zostało wybrane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="Tile.Tile.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mouse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tile.Tile.update" title="Stały odnośnik do tej definicji"></a></dt>
-<dd></dd></dl>
+<dd><p>Zaktualizowanie obiektu pola wieży.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mouse</strong> – (Mouse): Obiekt myszki służący do określenia stanu pola wieży.</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

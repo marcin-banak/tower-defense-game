@@ -12,7 +12,6 @@ tower-defense-game
    Building
    Button
    CONST
-   CannonTower
    Enemy
    Footman
    Knight
@@ -22,3 +21,4 @@ tower-defense-game
    Wolf
    main
    mouse
+   Projectile

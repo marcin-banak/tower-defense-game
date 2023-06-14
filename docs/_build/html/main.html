@@ -54,7 +54,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Knight.html">Knight module</a></li>
@@ -67,6 +66,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#main.Main.screen"><code class="docutils literal notranslate"><span class="pre">Main.screen</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#main.Main.draw_screen"><code class="docutils literal notranslate"><span class="pre">Main.draw_screen</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#main.Main.font"><code class="docutils literal notranslate"><span class="pre">Main.font</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main.Main.scene"><code class="docutils literal notranslate"><span class="pre">Main.scene</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#main.Main.map"><code class="docutils literal notranslate"><span class="pre">Main.map</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#main.Main.textures"><code class="docutils literal notranslate"><span class="pre">Main.textures</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#main.Main.mouse"><code class="docutils literal notranslate"><span class="pre">Main.mouse</span></code></a></li>
@@ -185,6 +185,17 @@ głównej pętli gry oraz rysowanie.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="main.Main.scene">
+<span class="sig-name descname"><span class="pre">scene</span></span><a class="headerlink" href="#main.Main.scene" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zmienna przechowująca metodę klasy Main (menu lub game),         która decyduje jaka scena powinna zostać obliczona w obecnym obrocie pętli.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>method</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="main.Main.map">
 <span class="sig-name descname"><span class="pre">map</span></span><a class="headerlink" href="#main.Main.map" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Lista napisów, w której prztrzymywana jest mapa         wczytana z pliku tekstowego.</p>
@@ -212,7 +223,7 @@ głównej pętli gry oraz rysowanie.</p>
 <dd><p>Obiekt myszki.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="mouse.html#mouse.Mouse" title="mouse.Mouse">mouse.Mouse</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="mouse.html#mouse.Mouse" title="mouse.Mouse">Mouse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -352,102 +363,176 @@ głównej pętli gry oraz rysowanie.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.add_enemies">
 <span class="sig-name descname"><span class="pre">add_enemies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.add_enemies" title="Stały odnośnik do tej definicji"></a></dt>
-<dd><p>Dodanie przeciwników do listy enemies na podstawie stałych
-ENEMIES_MAX_POWER i ENEMIES_POWER_INTERVAL.</p>
-<p>Returns: void</p>
+<dd><p>Dodanie przeciwników do listy enemies na podstawie stałych         ENEMIES_MAX_POWER i ENEMIES_POWER_INTERVAL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.check_events">
 <span class="sig-name descname"><span class="pre">check_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.check_events" title="Stały odnośnik do tej definicji"></a></dt>
-<dd><p>Sprawdzenie czy w trakcie działania programu zostało stworzone zdarzenie z modułu pygame
-i wykonanie powiązanych z nim akcji.</p>
-<p>Returns: void</p>
+<dd><p>Sprawdzenie czy w trakcie działania programu zostało stworzone zdarzenie         z modułu pygame i wykonanie powiązanych z nim akcji.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.display_update">
 <span class="sig-name descname"><span class="pre">display_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.display_update" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Odświeżenie ekranu i wyrysowanie wszystkich zmian, które zaszły od narysowania poprzedniej klatki.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.draw_game">
 <span class="sig-name descname"><span class="pre">draw_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.draw_game" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Narysowanie gry po wcześniejszym obliczeniu jej przez metodę game.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.draw_menu">
 <span class="sig-name descname"><span class="pre">draw_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.draw_menu" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Narysowanie menu po wcześniejszym obliczeniu go przez metodę menu.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.find_entrance">
 <span class="sig-name descname"><span class="pre">find_entrance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.find_entrance" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Znalezienie pola, które jest początkiem ścieżki.</p>
-<p>Returns: entrance (pygame.Vector2)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Para koordynatów reprezentująca początek ścieżki.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>entrance (pygame.Vector2)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.game">
 <span class="sig-name descname"><span class="pre">game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.game" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Obsłużenie logiki związanej z działeniem gry.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.get_path">
 <span class="sig-name descname"><span class="pre">get_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.get_path" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Stworzenie listy koordynatów reprezentujących pola ścieżki.</p>
-<p>Returns: path (list)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista par koordynatów, które reprezentują pola ścieżki.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>path (list)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.init_buttons">
 <span class="sig-name descname"><span class="pre">init_buttons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.init_buttons" title="Stały odnośnik do tej definicji"></a></dt>
-<dd><p>Zainicjowania listy przycisków znajdujących się w menu.</p>
-<p>Returns: buttons: list</p>
+<dd><p>Zainicjowanie listy przycisków znajdujących się w menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista przycisków.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>buttons (list)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.init_enemies">
 <span class="sig-name descname"><span class="pre">init_enemies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.init_enemies" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zainicjowanie listy przeciwników.</p>
-<p>Returns: enemies: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista przeciwników.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>enemies (list)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.init_game">
 <span class="sig-name descname"><span class="pre">init_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.init_game" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zainicjowanie zasobów używanych do obsługi gry.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.init_menu">
 <span class="sig-name descname"><span class="pre">init_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.init_menu" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zainicjowanie zasobów używanych do obsługi menu.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.init_tile_buttons">
 <span class="sig-name descname"><span class="pre">init_tile_buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="Tile.html#Tile.Tile" title="Tile.Tile"><span class="pre">Tile</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.init_tile_buttons" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Utworzenie przycisków, które pokazują się po naciśnięciu pola wieży.</p>
-<p>Args: tile (Tile)
-Returns: tile_buttons (list)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tile</strong> (<a class="reference internal" href="Tile.html#Tile.Tile" title="Tile.Tile"><em>Tile</em></a>) – pole wieży, dla którego zostaną stworzone przyciski.</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>lista przycisków służących do wyboru wieży na danym polu.</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tile_buttons (list)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.init_tiles">
 <span class="sig-name descname"><span class="pre">init_tiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.init_tiles" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zainicjowanie listy pól wież.</p>
-<p>Returns: tiles: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista pól wież.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>tiles (list)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -462,7 +547,10 @@ Returns: tile_buttons (list)</p>
 </ul>
 </dd>
 <dt class="field-even">Zwraca<span class="colon">:</span></dt>
-<dd class="field-even"><p>is_valid_field (bool)</p>
+<dd class="field-even"><p>Prawda, jeśli podane koordynety mieszczą się w rozmiarach mapy.</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p>is_valid_field (bool)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -471,70 +559,119 @@ Returns: tile_buttons (list)</p>
 <dt class="sig sig-object py" id="main.Main.load_map">
 <span class="sig-name descname"><span class="pre">load_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.load_map" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Wczytanie mapy z pliku tekstowego.</p>
-<p>Returns: map (list)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista napisów reprezentujących mapę gry.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>map (list)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.load_textures">
 <span class="sig-name descname"><span class="pre">load_textures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.load_textures" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Wczytanie tekstur programu.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.make_cover">
 <span class="sig-name descname"><span class="pre">make_cover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.make_cover" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Stworzenie płaszczyzny która przysłoni pole wieży po jej zbudowaniu.</p>
-<p>Returns: cover (pygame.Surface)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Płaszczyzna wielkości czterech pól z teksturą trawy.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>cover (pygame.Surface)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.menu">
 <span class="sig-name descname"><span class="pre">menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.menu" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Obsłużenie logiki związanej z działeniem menu.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.render_map">
 <span class="sig-name descname"><span class="pre">render_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.render_map" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Narysowanie mapy na podstawie tekstur gry i pliku tekstowego z mapą.</p>
-<p>Returns: map_surface (pygame.Surface)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Płaszczyzna, która jest             wizualną reprezentacją mapy wczytanej z pliku tekstowego.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>map_surface (pygame.Surface)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.update_buttons">
 <span class="sig-name descname"><span class="pre">update_buttons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.update_buttons" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zaktualizowanie przycisków znajdujących się w menu.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.update_enemies">
 <span class="sig-name descname"><span class="pre">update_enemies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.update_enemies" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zakutalizowanie przeciwników.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.update_projectiles">
 <span class="sig-name descname"><span class="pre">update_projectiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.update_projectiles" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zaktualizowanie pocisków.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.update_tiles">
 <span class="sig-name descname"><span class="pre">update_tiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.update_tiles" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zaktualizowanie pól wież.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="main.Main.update_towers">
 <span class="sig-name descname"><span class="pre">update_towers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Main.update_towers" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Zaktualizowanie wież.</p>
-<p>Returns: void</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

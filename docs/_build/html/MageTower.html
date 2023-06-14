@@ -54,12 +54,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Building.html">Building module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Button.html">Button module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CONST.html">CONST module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CannonTower.html">CannonTower module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Enemy.html">Enemy module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Footman.html">Footman module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Knight.html">Knight module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">MageTower module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#MageTower.MageTower"><code class="docutils literal notranslate"><span class="pre">MageTower</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MageTower.MageTower.pos"><code class="docutils literal notranslate"><span class="pre">MageTower.pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MageTower.MageTower.last_shot"><code class="docutils literal notranslate"><span class="pre">MageTower.last_shot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MageTower.MageTower.shoot"><code class="docutils literal notranslate"><span class="pre">MageTower.shoot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MageTower.MageTower.target"><code class="docutils literal notranslate"><span class="pre">MageTower.target</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#MageTower.MageTower.update"><code class="docutils literal notranslate"><span class="pre">MageTower.update()</span></code></a></li>
 </ul>
 </li>
@@ -105,10 +108,67 @@
 <dt class="sig sig-object py" id="MageTower.MageTower">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MageTower.</span></span><span class="sig-name descname"><span class="pre">MageTower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MageTower.MageTower" title="Stały odnośnik do tej definicji"></a></dt>
 <dd><p>Klasy bazowe: <a class="reference internal" href="Building.html#Building.Building" title="Building.Building"><code class="xref py py-class docutils literal notranslate"><span class="pre">Building</span></code></a></p>
+<p>Klasa, dziedzicząca po abstrakcyjnej klasie Building, reprezentuje wieżę maga,     której instancje gracz może tworzyć podczas trwania gry.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MageTower.MageTower.pos">
+<span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#MageTower.MageTower.pos" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Para koordynatów reprezentująca pozycję wieży.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pygame.Vector2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MageTower.MageTower.last_shot">
+<span class="sig-name descname"><span class="pre">last_shot</span></span><a class="headerlink" href="#MageTower.MageTower.last_shot" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zmienna śledząca ilość czasu jaka minęła od ostatniego          wystrzelenia pocisku przez wieżę.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MageTower.MageTower.shoot">
+<span class="sig-name descname"><span class="pre">shoot</span></span><a class="headerlink" href="#MageTower.MageTower.shoot" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wartość logiczna określająca, czy wieża wykonała strzał,         bazowo ustawiona na False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MageTower.MageTower.target">
+<span class="sig-name descname"><span class="pre">target</span></span><a class="headerlink" href="#MageTower.MageTower.target" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Przeciwnik, który jest celem wieży bazowo ustawiony na None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="Enemy.html#Enemy.Enemy" title="Enemy.Enemy">Enemy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="MageTower.MageTower.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enemies</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MageTower.MageTower.update" title="Stały odnośnik do tej definicji"></a></dt>
-<dd></dd></dl>
+<dd><p>Zaktualizowanie obiektu wieży</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enemies</strong> (<em>list</em>) – Lista przeciwników, w której znajdujemy przeciwnika,</p></li>
+<li><p><strong>wieża.</strong> (<em>do którego powinna strzelać</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>void</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
