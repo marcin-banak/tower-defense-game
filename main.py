@@ -1,3 +1,70 @@
+# -----------------------------------------------------------------------------
+# Marcin Banak
+# Zadanie końcowe na przedmiot "Programowanie obiektowe"
+# Gra "Tower defense"
+# Data utworzenia: 14.06.2023
+# Wersja 1.0.0
+# -----------------------------------------------------------------------------
+# Wykorzystywany język: Python 3.11
+# Wykorzystywana biblioteka: Pygame 2.3
+# -----------------------------------------------------------------------------
+# Instalacja elementów niezbędnych do uruchomienia programu:
+# Interpreter Python 3.11:
+#   1. Pobranie interpretera Pythona ze strony https://www.python.org.
+#   2. Instalacja zgodnie z zalecanymi ustawieniami instalatora (należy
+#    zaznaczyć opcję dodającą Pythona do ścieżki systemu).
+# Biblioteka Pygame 2.3:
+#   1. Uruchomienie wiersza poleceń systemu Windows (cmd).
+#   2. Wpisanie "pip install pygame".
+#   3. Jeżeli polecenie nie zostanie rozpoznane, należy upewnić się,
+#      że interpreter Pythona został poprawnie zainstalowany i dodany
+#      do ścieżki systemu.
+#   4. Jeżeli w dalszym ciągu polecenie "pip install pygame" nie jest
+#      wykonywane prawidłowo, należy spróbować użyć polecenia "python -m pip
+#      install pygame".
+# -----------------------------------------------------------------------------
+# Uruchomienie Programu:
+# 1. Należy upewnić się, że pliki:
+#   - main.py
+#   - ArcherTower.py
+#   - Arrow.py
+#   - ArtilleryTower.py
+#   - Beam.py
+#   - Bomob.py
+#   - Building.py
+#   - Button.py
+#   - CONST.py
+#   - Enemy.py
+#   - font.ttf
+#   - Footman.py
+#   - Knight.py
+#   - MageTower.py
+#   - map.txt
+#   - mouse.py
+#   - Projectile.py
+#   - Tile.py
+#   - TileButton.py
+#   - Wolf.py
+#   - folder z teksturami o nazwie Textures
+#    Znajdują się w jednym folderze.
+# 2. Uruchomienie wiersza poleceń systemu Windows (cmd).
+# 3. Przejście do folderu, gdzie znajdują się pliku programu.
+# 4. Użycie polecenia "python main.py".
+# -----------------------------------------------------------------------------
+# Dodatkowe informacje
+# -----------------------------------------------------------------------------
+# Językiem użytym do udokumentowania całego programu, jest język polski.
+# Najczęściej stosowana konwencja komentowania kodu napisanego w Pythonie
+# zakłada używanie "docstrings". Są to komentarze umieszczane
+# pod nazwami klas, funkcji czy stałych, które są "rozumiane" przez IDE i moduł
+# Sphinx (użyty do utworzenia automatycznej dokumentacji tego projektu).
+# Sphinx zakłada bardzo precyzyjny sposób, w jaki mają być przedstawione
+# argumenty oraz atrybuty funkcji. W związku z tym sekcje z opisem argumentów
+# funkcji, zwracanych przez nie wartości i sekcje atrybutów klas są nazwane:
+# "Args", "Returns", "Attributes". Proszę traktować je jako część kodu,
+# który tak samo, jak one jest napisany w języku angielskim.
+# -----------------------------------------------------------------------------
+
 """Główny moduł gry. Używa pozostałych modułów projektu. Uruchomienie
 tego modułu skutkuje uruchomieniem menu gry.
 """
@@ -6,7 +73,6 @@ import time
 import os
 
 from pygame import *
-
 from Footman import *
 from CONST import *
 from Knight import *
@@ -49,7 +115,7 @@ class Main:
         is_running (bool): Zmienna determinująca długość działania \
         głównej pętli programu.
 
-        clock (pygame.Clock): Obiekt zegara służący do obliczania czasu \
+        clock (time.Clock): Obiekt zegara służący do obliczania czasu \
         jaki minął pomiędzy klatkami.
 
         dt (float): Skalar, przez który przemnażane są zmienne, \
@@ -95,7 +161,7 @@ class Main:
         self.load_textures()
         self.mouse: mouse.Mouse = Mouse()
         self.is_running: bool = True
-        self.clock: pygame.Clock = time.Clock()
+        self.clock: time.Clock = time.Clock()
         self.dt: float = 1
 
         self.path: list = []
@@ -118,7 +184,7 @@ class Main:
         quit()
 
     def check_events(self):
-        """Sprawdzenie czy w trakcie działania programu zostało stworzone zdarzenie \
+        """Sprawdzenie, czy w trakcie działania programu zostało stworzone zdarzenie \
         z modułu pygame i wykonanie powiązanych z nim akcji.
 
         Returns:

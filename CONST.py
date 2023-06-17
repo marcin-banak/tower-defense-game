@@ -1,3 +1,11 @@
+# -----------------------------------------------------------------------------
+# Marcin Banak
+# Zadanie końcowe na przedmiot "Programowanie obiektowe"
+# Gra "Tower defense"
+# Data utworzenia: 14.06.2023
+# Wersja 1.0.0
+# -----------------------------------------------------------------------------
+
 """Moduł zawiera stałe wykorzystywane przez program."""
 import pygame
 
