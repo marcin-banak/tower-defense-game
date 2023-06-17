@@ -17,7 +17,7 @@ Program przedstawia grę typu "obrona wieży", w której zadaniem gracza jest bu
 przed nadciągającymi falami wrogów.
 
 ## Dokumentacja
-Dokumentacja zawiera opis poszczególnych klas, metod i stałych. Aby ją zobaczyć należy kliknąć [tutaj](.\docs\_build\html\main.html).
+Dokumentacja zawiera opis poszczególnych klas, metod i stałych. Aby ją zobaczyć należy pobrać repozytorium i otworzyć za pomocą przeglądarki, plik znajdujący się pod adresem ".\docs\_build\html\main.html".
 
 ## Pobieranie
 
