@@ -63,6 +63,10 @@
 # funkcji, zwracanych przez nie wartości i sekcje atrybutów klas są nazwane:
 # "Args", "Returns", "Attributes". Proszę traktować je jako część kodu,
 # który tak samo, jak one jest napisany w języku angielskim.
+#
+# Instrukcję obsługi programu można zobaczyć w repozytorium projektu,
+# znajdującym się na githubie pod adresem:
+# https://github.com/marcin-banak/tower-defense-game
 # -----------------------------------------------------------------------------
 
 """Główny moduł gry. Używa pozostałych modułów projektu. Uruchomienie
